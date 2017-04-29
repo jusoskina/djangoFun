@@ -15,13 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf.urls import include
 
 import core.views
+import howdy
 
 urlpatterns = [
     url(r'^$', core.views.index),
     url(r'^admin/', admin.site.urls),
     url(r'^buyers-delete/(?P<buyer_id>\d+)/', core.views.delete_buyer),
-    url(r'^buyers/', core.views.buyers)
-
+    url(r'^buyers/', core.views.buyers),
+    url(r'^howdy/', include('howdy.urls')),
+    url(r'^about/', include('howdy.urls')),
 ]
