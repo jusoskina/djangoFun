@@ -1,0 +1,13 @@
+<html>
+{% if submit %}
+	<h2>Created {{ buyer_account.name }}.</h2>
+{% endif %}
+	<form action="/" method="post">
+		{% csrf_token %}
+		<input type="text" placeholder="Buyer Name" name="buyer">
+		<input type="text" placeholder="Account ID" name="account_id">
+		<input type="submit" value="submit">
+	</form>
+	<br/> <br/>
+	<a href='/buyers/'>View buyers</a>
+</html>

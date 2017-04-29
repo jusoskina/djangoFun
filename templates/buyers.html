@@ -1,0 +1,9 @@
+<html>
+  <a href="/">Go back home</a><br/>
+  {% for buyer_account in buyer_accounts %}
+  {{ buyer_account.name }}<br />
+  {{ buyer_account.account_id}}<br />
+  {{ buyer_account.id}}<br />
+  <a href="/buyers-delete/{{ buyer_account.id }}">Delete this buyer account</a><br/><br/>
+  {% endfor %}
+</html>
